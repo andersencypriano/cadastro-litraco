@@ -10,7 +10,7 @@ export default function DashboardPage() {
 
     useEffect(() => {
         if (!isPending && !session?.user) {
-            router.push("/sign-in");
+            router.push("/dashboard");
         }
     }, [isPending, session, router]);
 
@@ -22,10 +22,15 @@ export default function DashboardPage() {
     const { user } = session;
 
     return (
-        <main className="max-w-md h-screen flex items-center justify-center flex-col mx-auto p-6 space-y-4 text-white">
-            <h1 className="text-2xl font-bold">Dashboard</h1>
-            <p>Welcome, {user.name || "User"}!</p>
+        <main className="max-w-[80rem] h-screen flex justify-center flex-col mx-auto p-6 space-y-4 text-white">
+            <h1 className="text-2xl font-bold">Parabéns, {user.name} sua marchinha foi cadastrada com sucesso!</h1>
+            <p className="">Endereço: {user.address}</p>
+            <p>Telefone: {user.phone}</p>
             <p>Email: {user.email}</p>
+            <div>
+                <h2 className="text-xl font-bold mb-2">Marchinha: {user.title}</h2>
+                <p>Letra: {user.lyrics}</p>
+            </div>
             <button
                 onClick={() => signOut()}
                 className="w-full bg-white text-black font-medium rounded-md px-4 py-2 hover:bg-gray-200"
