@@ -34,7 +34,7 @@ export default function SignUpPage() {
 
   return (
     <main className="max-w-md mx-auto p-6 space-y-4 text-white">
-      <h1 className="text-2xl font-bold">Cadastrar-se</h1>
+      <h1 className="text-2xl font-bold">Cadastrar marchinha</h1>
 
       {error && <p className="text-red-500">{error}</p>}
 
